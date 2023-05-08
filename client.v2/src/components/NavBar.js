@@ -10,6 +10,7 @@ import { Container } from "react-bootstrap";
 const NavBar = () => {
     const {user} = useContext(Context)
     return (
+      
       //  fixed="top"
         <Navbar bg="dark" variant="dark">
           <Container>

@@ -8,7 +8,6 @@ import { Context } from '../index';
 const AppRouter = () => {
     const {user} = useContext(Context)
     
-    console.log(user)
     return (
         // если пользователь авторизован и выбран путь из authRoutes, то отрисовываем его
         // иначе отрисовываем публичные 

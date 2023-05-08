@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Context } from '..';
+import { Context } from "../index";
 import { Row } from 'react-bootstrap';
 import {observer} from "mobx-react-lite"
 import TrailItem from './TrailItem';
@@ -9,8 +9,8 @@ const TrailsList = observer(() => {
 
     return (
         <Row className="d-flex">
-            {trail.trails.map(trail => 
-                <TrailItem key={trail.id} trail={trail}/>
+            {trail.trails.map(trail =>
+                <TrailItem key={trail.id} trail={trail}/>    
             )}
         </Row>
     );

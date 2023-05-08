@@ -16,7 +16,7 @@ ReactDOM.render(
         user: new UserStore(),
         trail: new TrailStore()
     }}>
-
+        
         <App />
     </Context.Provider>,
     document.getElementById('root')
