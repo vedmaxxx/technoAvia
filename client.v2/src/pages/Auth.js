@@ -15,7 +15,6 @@ const Auth = () => {
         <Container
             className='d-flex justify-content-center align-items-center'
             style={{height: window.innerHeight - 54}}
-        
         >
             <Card style={{width:600}} className='p-5'>
                 <h2 className='m-auto'>{isLogin ? "Авторизация" : "Регистрация"} </h2>
@@ -29,20 +28,17 @@ const Auth = () => {
                         placeholder="Введите ваш пароль..."
                     />
                     <Row className='d-flex justify-content-between mt-3 pl-3 pr-3'>
-                        {
-                            isLogin ? 
+                        {isLogin ? 
                             <div>
-                            Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйтесь</NavLink>
-                        </div>
+                                Нет аккаунта? <NavLink to={REGISTRATION_ROUTE}>Зарегистрируйтесь</NavLink>
+                            </div>
                             :
                             <div>
-                            Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите</NavLink>
-                        </div>
+                                Есть аккаунт? <NavLink to={LOGIN_ROUTE}>Войдите</NavLink>
+                            </div>
                         }
                         
-                        <Button 
-                            variant={"outline-success"}
-                        >
+                        <Button variant={"outline-success"}>
                             {isLogin ? "Войти" : "Регистрация"}
                         </Button>
                     </Row>
