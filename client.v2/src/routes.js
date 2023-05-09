@@ -3,7 +3,8 @@ import Lk from "./pages/Lk";
 import Main from "./pages/Main";
 import Auth from './pages/Auth';
 
-import { ADMIN_ROUTE, LK_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, REGISTRATION_ROUTE } from "./utils/consts";
+import { ADMIN_ROUTE, LK_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, PAY_ROUTE, REGISTRATION_ROUTE } from "./utils/consts";
+import Pay from "./pages/Pay";
 
 // пути для авторизованных пользователей
 export const authRoutes = [
@@ -15,6 +16,10 @@ export const authRoutes = [
         path: LK_ROUTE,
         Component: Lk
     },
+    {
+        path: PAY_ROUTE,
+        Component: Pay
+    }
 ]
 
 // пути для всех 

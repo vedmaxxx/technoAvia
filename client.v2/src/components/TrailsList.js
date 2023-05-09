@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from "../index";
-import { Image, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import {observer} from "mobx-react-lite"
 import TrailItem from './TrailItem';
 

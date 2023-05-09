@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { Button, Card, Image } from 'react-bootstrap';
-import { Form } from 'react-bootstrap';
 import { Context } from '../..';
 
 const SelectTechnic = ({show, onHide}) => {
@@ -22,26 +21,45 @@ const SelectTechnic = ({show, onHide}) => {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <div className='d-flex flex-column'>
+                <div className='pe-3 ps-3 d-flex flex-column'>
                     {technic.technics.map(technic => 
-                        <Card 
-                            key={technic.id}
-                            style={{width:500}} 
-                            className=" d-flex align-items-center"
-                        >
-                            {/* <Image src={technic.image}></Image>
-                             */}
-                             <Image src="../../images/helicopters/sponsor-05.jpg"/>
-                            <div>{technic.name}</div>
-                            <div>{technic.contain}</div>
-                            <div>{technic.maxTimeOn}</div>
-                        </Card>
+                        <div className='mb-3 d-flex flex-row justify-content-between'>
+                            <Card 
+                                key={technic.id}
+                                style={{width:"80%", height:"50%", paddingRight:30, paddingLeft:30, paddingTop:20, paddingBottom:20}} 
+                                className="d-flex align-items-center"
+                            >
+                                <div 
+                                    className='d-flex align-items-center'
+                                    style={{width:""}} 
+                                >
+                                    
+                                    <div 
+                                        className='mt-3 mb-2'
+                                        style={{fontSize:22, width:"60%"}}
+                                    >
+                                        <Image
+                                            src={technic.image}
+                                            style={{maxWidth:"90%", height:"auto", maxHeight:"100%", display:'block', objectFit:'cover'}} 
+                                        />
+                                        <div className='mt-2'><b>Вертолет:</b> {technic.name}</div>
+                                    </div>
+                                    <div style={{fontSize:18}}>
+                                        <div><b>Вместимость:</b> {technic.contain} человек</div>
+                                        <div><b>Максимальное время полета:</b> {technic.maxTimeOn}</div>
+                                    </div>
+                                </div>
+                            </Card>
+                            <div className='d-flex align-items-center pe-2'>
+                                <Button className='btn-lg' >Выбрать</Button>
+                            </div>
+                        </div>
                     )}
                 </div>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant="outline-danger" onClick={onHide}>Закрыть</Button>
-                <Button variant="outline-success" onClick={onHide}>Выбрать</Button>
+                <Button style={{fontSize:24, width:"23%"}} variant="outline-danger" onClick={onHide}>Закрыть</Button>
+                {/* <Button variant="outline-success" onClick={onHide}>Выбрать</Button> */}
             </Modal.Footer>
         </Modal>
     )

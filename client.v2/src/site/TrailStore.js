@@ -23,7 +23,12 @@ export default class TrailStore {
             trailtime: '4', 
             image:'https://www.rgo.ru/sites/default/files/node/19736/kapova-peshhera.jpg'},
         ]
+        this._selectedTrail = {}
         makeAutoObservable(this)
+    }
+
+    setSelectedTrail(trail) {
+        this._selectedTrail = trail
     }
 
     setTrails(trails) {
@@ -32,5 +37,9 @@ export default class TrailStore {
     
     get trails() {
         return this._trails
+    }
+
+    get selectedTrail() {
+        return this._selectedTrail
     }
 }

@@ -8,8 +8,14 @@ import SelectTechnic from './modals/SelectTechnic';
 // здесь нужно вставить корректно данные по маршруту
 const TrailItem = ({trail}) => {
     const [technicVisible, setTechnicVisible] = useState(false)
-
-    console.log(SelectTechnic)
+    // const history = useNavigate()
+    
+    function selectBtnHandle() {
+        setTechnicVisible(true)
+        // trail.setSelectedTrail()
+        // нужно как-то сохранить выбранный путь
+    }
+    
     return (
         <Col md={12} className={"mt-5 mb-5"}>
             <div className='d-flex justify-content-between'>
@@ -37,7 +43,7 @@ const TrailItem = ({trail}) => {
                     </div>
                     <Button 
                         style={{width:"80%", fontSize: 20, marginTop:65}}
-                        onClick={() => setTechnicVisible(true)}
+                        onClick={() => selectBtnHandle()}
                     >
                         Выбрать маршрут
                     </Button>
@@ -46,7 +52,6 @@ const TrailItem = ({trail}) => {
             <SelectTechnic show={technicVisible} onHide={() => setTechnicVisible(false)}/>
         </Col>
     );
-
 };
 
 export default TrailItem;
