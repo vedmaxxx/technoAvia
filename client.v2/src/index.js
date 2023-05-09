@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import App from './App'
 import UserStore from './site/UserStore';
 import TrailStore from './site/TrailStore';
+import TechnicStore from './site/TechnicStore';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/css/bootstrap-grid.css';
 // import { AppContextProvider } from './components/AppContext.js'
@@ -14,7 +15,8 @@ export const Context = createContext(null)
 ReactDOM.render(
     <Context.Provider value={{
         user: new UserStore(),
-        trail: new TrailStore()
+        trail: new TrailStore(),
+        technic: new TechnicStore(),
     }}>
         
         <App />

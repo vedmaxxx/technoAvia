@@ -1,12 +1,11 @@
 import React, { useContext } from 'react';
 import { Context } from "../index";
-import { Row } from 'react-bootstrap';
+import { Image, Row } from 'react-bootstrap';
 import {observer} from "mobx-react-lite"
 import TrailItem from './TrailItem';
 
 const TrailsList = observer(() => {
     const {trail} = useContext(Context)
-
     return (
         <Row className="d-flex">
             {trail.trails.map(trail =>

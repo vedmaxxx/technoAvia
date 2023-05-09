@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import TrailsList from '../components/TrailsList';
 
 const Main = () => {
+    
     return (
         <Container>
             <div style={{marginTop: "80px"}}>
