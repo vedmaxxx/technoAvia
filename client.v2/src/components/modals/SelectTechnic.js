@@ -1,10 +1,17 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { Button, Card, Image } from 'react-bootstrap';
 import { Context } from '../..';
 
 const SelectTechnic = ({show, onHide}) => {
     const {technic} = useContext(Context)
+    const [text, isActive] = useState("Выбрать")
+
+    function selectBtnHandle() {
+        technic.setSelectedTechnic(technic)
+        isActive((text) => text="Выбрано")
+    }
+
     return (
         <Modal
             show={show}
@@ -51,7 +58,7 @@ const SelectTechnic = ({show, onHide}) => {
                                 </div>
                             </Card>
                             <div className='d-flex align-items-center pe-2'>
-                                <Button className='btn-lg' >Выбрать</Button>
+                                <Button className='btn-lg' onClick={() => selectBtnHandle()}>Выбрать</Button>
                             </div>
                         </div>
                     )}

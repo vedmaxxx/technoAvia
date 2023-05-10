@@ -27,14 +27,23 @@ export default class TechnicStore {
             maxTimeOn: 3, 
             image:'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL2hlbGljb3B0ZXItYS03LmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6IjEyMDAifX19'},
         ]
+        this._selectedTechnic={}
         makeAutoObservable(this)
     }
 
     setTechnics(technics) {
         this._technics = technics
     }
-    
+    setSelectedTechnic(technic) {
+        this._selectedTrail = technic
+        console.log("selectedTechnic установился")
+    }
+
+
     get technics() {
         return this._technics
+    }
+    get selectedTechnic(){
+        return this._selectedTechnic
     }
 }

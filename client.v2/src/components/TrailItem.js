@@ -1,19 +1,26 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Card, Col, Image} from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom'
 import SelectTechnic from './modals/SelectTechnic';
+import { Context } from '..';
+import { Form } from 'react-bootstrap';
+import { Radio } from 'react-bootstrap';
 // useHistory в reactrouterdomv6 == useNavigate
 
 // здесь нужно вставить корректно данные по маршруту
 const TrailItem = ({trail}) => {
     const [technicVisible, setTechnicVisible] = useState(false)
+    const {trail : trailContext} = useContext(Context)
     // const history = useNavigate()
     
+    // функция, которая при нажатии кнопки "Выбрать маршрут" сохранит
+    // информацию о выбранном маршруте в TrailStore и откроет модальное
+    // окно выбора вертолета
     function selectBtnHandle() {
+        trailContext.setSelectedTrail(trail)
+        // console.log(trailContext.selectedTrail)
         setTechnicVisible(true)
-        // trail.setSelectedTrail()
-        // нужно как-то сохранить выбранный путь
     }
     
     return (
@@ -26,6 +33,7 @@ const TrailItem = ({trail}) => {
                     />
                 </div>
                 <Card 
+                    active={trail.id === trailContext.selectedTrail.id}
                     style={{width:500, paddingRight:60, paddingLeft:60, paddingTop:40, paddingBottom:20}} 
                     className="ms-5 d-flex flex-column align-items-center"
                 >
@@ -41,9 +49,15 @@ const TrailItem = ({trail}) => {
                     <div style={{fontSize: 24, marginTop:45}}>
                         <b>Время путешествия:</b> {trail.trailtime}ч.
                     </div>
+                    {/* <Form>
+                        <Form.Check
+                            inline
+                            type={'radio'}
+                        />
+                    </Form> */}
                     <Button 
                         style={{width:"80%", fontSize: 20, marginTop:65}}
-                        onClick={() => selectBtnHandle()}
+                        onClick={selectBtnHandle}
                     >
                         Выбрать маршрут
                     </Button>

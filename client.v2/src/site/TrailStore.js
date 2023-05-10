@@ -29,6 +29,7 @@ export default class TrailStore {
 
     setSelectedTrail(trail) {
         this._selectedTrail = trail
+        console.log("selectedTrail установился")
     }
 
     setTrails(trails) {
