@@ -55,7 +55,7 @@ const TrailItem = ({trail}) => {
                     </Button>
                 </Card>
             </div>
-            <SelectTechnic  show={technicVisible} onHide={() => setTechnicVisible(false)}/>
+            <SelectTechnic show={technicVisible} onHide={() => setTechnicVisible(false)}/>
         </Col>
     );
 };

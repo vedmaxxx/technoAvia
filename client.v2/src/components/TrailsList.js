@@ -13,12 +13,10 @@ const TrailsList = observer(() => {
                 <TrailItem 
                     key={trail.id} 
                     trail={trail}
-                    
                 />
             )}
         </Row>
     );
-
 });
     
 
