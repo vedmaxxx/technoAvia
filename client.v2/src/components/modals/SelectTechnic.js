@@ -1,15 +1,19 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
 import { Button, Card, Image } from 'react-bootstrap';
 import { Context } from '../..';
+import { Navigate, redirect, useNavigate } from 'react-router-dom';
+import { MAIN_ROUTE, PAY_ROUTE, TECHNIC_ROUTE } from '../../utils/consts';
+import Pay from '../../pages/Pay'
+import { render } from 'react-dom';
 
 const SelectTechnic = ({show, onHide}) => {
-    const {technic} = useContext(Context)
-    const [text, isActive] = useState("Выбрать")
+    const {technic : technicContext} = useContext(Context)
+    const navigate = useNavigate()
 
     function selectBtnHandle() {
-        technic.setSelectedTechnic(technic)
-        isActive((text) => text="Выбрано")
+        technicContext.setSelectedTechnic(technic)
+        navigate(PAY_ROUTE)
     }
 
     return (
@@ -58,7 +62,10 @@ const SelectTechnic = ({show, onHide}) => {
                                 </div>
                             </Card>
                             <div className='d-flex align-items-center pe-2'>
-                                <Button className='btn-lg' onClick={() => selectBtnHandle()}>Выбрать</Button>
+                                <Button className='btn-lg' onClick={() => {
+                                    technic.setSelectedTechnic(technic)
+                                    navigate(PAY_ROUTE)
+                                }}>Выбрать</Button>
                             </div>
                         </div>
                     )}
