@@ -16,10 +16,7 @@ export const authRoutes = [
         path: LK_ROUTE,
         Component: Lk
     },
-    {
-        path: PAY_ROUTE,
-        Component: Pay
-    }
+    
 ]
 
 // пути для всех 
@@ -37,5 +34,10 @@ export const publicRoutes = [
     {
         path: REGISTRATION_ROUTE,
         Component: Auth
+    },
+    // д.б. в authRoutes
+    {
+        path: PAY_ROUTE,
+        Component: Pay
     },
 ]

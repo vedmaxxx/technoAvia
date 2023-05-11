@@ -1,5 +1,5 @@
 import {makeAutoObservable} from 'mobx'
-// страница маршрутов
+// страница техники(вертолетов)
 
 // взаимодействие с mobx, хранение данных
 export default class TechnicStore {
@@ -37,13 +37,14 @@ export default class TechnicStore {
     setSelectedTechnic(technic) {
         this._selectedTrail = technic
         console.log("selectedTechnic установился")
+        console.log(technic.name)
+        console.log(this._selectedTechnic.name)
     }
-
 
     get technics() {
         return this._technics
     }
-    get selectedTechnic(){
+    get selectedTechnic() {
         return this._selectedTechnic
     }
 }

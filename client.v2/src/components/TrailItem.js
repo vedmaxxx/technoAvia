@@ -1,11 +1,9 @@
 import React, { useContext, useState } from 'react';
 import { Card, Col, Image} from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import {useNavigate} from 'react-router-dom'
 import SelectTechnic from './modals/SelectTechnic';
 import { Context } from '..';
-import { Form } from 'react-bootstrap';
-import { Radio } from 'react-bootstrap';
+
 // useHistory в reactrouterdomv6 == useNavigate
 
 // здесь нужно вставить корректно данные по маршруту
@@ -33,7 +31,7 @@ const TrailItem = ({trail}) => {
                     />
                 </div>
                 <Card 
-                    active={trail.id === trailContext.selectedTrail.id}
+                    // active={trail.id === trailContext.selectedTrail.id}
                     style={{width:500, paddingRight:60, paddingLeft:60, paddingTop:40, paddingBottom:20}} 
                     className="ms-5 d-flex flex-column align-items-center"
                 >
@@ -49,12 +47,6 @@ const TrailItem = ({trail}) => {
                     <div style={{fontSize: 24, marginTop:45}}>
                         <b>Время путешествия:</b> {trail.trailtime}ч.
                     </div>
-                    {/* <Form>
-                        <Form.Check
-                            inline
-                            type={'radio'}
-                        />
-                    </Form> */}
                     <Button 
                         style={{width:"80%", fontSize: 20, marginTop:65}}
                         onClick={selectBtnHandle}
@@ -63,7 +55,7 @@ const TrailItem = ({trail}) => {
                     </Button>
                 </Card>
             </div>
-            <SelectTechnic show={technicVisible} onHide={() => setTechnicVisible(false)}/>
+            <SelectTechnic  show={technicVisible} onHide={() => setTechnicVisible(false)}/>
         </Col>
     );
 };

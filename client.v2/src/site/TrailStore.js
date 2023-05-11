@@ -5,8 +5,6 @@ import {makeAutoObservable} from 'mobx'
 export default class TrailStore {
    
     constructor() {
-        // переключатель, авторизован ли пользователь
-        
         this._trails = [
             {id: 1, 
             name: 'Агидель', 
@@ -31,7 +29,6 @@ export default class TrailStore {
         this._selectedTrail = trail
         console.log("selectedTrail установился")
     }
-
     setTrails(trails) {
         this._trails = trails
     }
@@ -39,7 +36,6 @@ export default class TrailStore {
     get trails() {
         return this._trails
     }
-
     get selectedTrail() {
         return this._selectedTrail
     }

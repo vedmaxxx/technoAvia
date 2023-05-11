@@ -21,9 +21,9 @@ const NavBar = observer( () => {
               <NavLink className="me-2" style={{color: "white"}} to={MAIN_ROUTE}>
                 <Button variant={"outline-light"}>Маршруты</Button>
               </NavLink>
-              <NavLink className="me-2" style={{color: "white"}} to={MAIN_ROUTE}>
+              {/* <NavLink className="me-2" style={{color: "white"}} to={MAIN_ROUTE}>
                 <Button variant={"outline-light"}>Вертолеты</Button>
-              </NavLink>
+              </NavLink> */}
             </Nav>
 
 
