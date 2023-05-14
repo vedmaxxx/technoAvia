@@ -28,27 +28,13 @@ const Pay = () => {
                     <h4 className='mt-3'>Маршрут: {trail.selectedTrail.name}</h4>
                     <div className='mt-4'><b>Вертолет:</b> {technic.selectedTechnic.name}</div>
                     <div className='mt-2'><b>Количество человек:</b> {technic.selectedTechnic.contain}</div>
-                    {/* <div className='mt-2'><b>Стоимость:</b> {trail.selectedTrail.price}</div> */}
                 </div>
             </Card>
             <div style={{maxWidth:"35%"}} className='mt-4'>
                 <Form>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Электронная почта</Form.Label>
-                        <Form.Control type="email" placeholder="Введите email" />
-                        <Form.Text className="text-muted">
-                        </Form.Text>
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Ваше ФИО</Form.Label>
-                        <Form.Control type="" placeholder="Иванов Иван Иванович" />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
-                        <Form.Label>Номер телефона</Form.Label>
-                        <Form.Control type="" placeholder="+7 (999) 999-99-99" />
-                    </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Дополнительные пожелания" />
+                        <Form.Label>Ваши пожелания на полет</Form.Label>
+                        <Form.Control as="textarea" rows={3} placeholder="Комментарии..." label="Дополнительные пожелания" />
                     </Form.Group>
                     <Button 
                         variant="primary" type="submit" 

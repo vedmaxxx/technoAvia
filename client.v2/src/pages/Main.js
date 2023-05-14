@@ -12,7 +12,7 @@ const Main = () => {
 
             <TrailsList/>
 
-            <div style={{height: "300px"}}></div>
+            <div style={{height: "200px"}}></div>
         </Container>
     );
 };

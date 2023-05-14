@@ -22,12 +22,10 @@ const TechnicItem = ({technic}) => {
                             src={technic.image}
                             style={{maxWidth:"90%", height:"auto", maxHeight:"100%", display:'block', objectFit:'cover'}} 
                         />
-                        
                     </div>
-                    <div style={{fontSize:18}}>
+                    <div>
                         <div style={{fontSize:22}}>{technic.name}</div>
-                        <div><b>Вместимость:</b> {technic.contain} человек</div>
-                        {/* <div><b>Максимальное время полета:</b> {technic.maxTimeOn}</div> */}
+                        <div><b>Вместимость:</b> {technic.contain} чел.</div>
                     </div>
                 </div>
             </Card>
