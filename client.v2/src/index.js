@@ -17,6 +17,7 @@ ReactDOM.render(
         user: new UserStore(),
         trail: new TrailStore(),
         technic: new TechnicStore(),
+        // tour: new TourStore(),
     }}>
         
         <App />

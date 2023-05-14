@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Context } from '..';
 import { Card, Container } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { SUCCESS_ROUTE } from '../utils/consts';
 
 const Pay = () => {
+    // нужно tour
     const {trail} = useContext(Context)
     const {technic} = useContext(Context)
     const navigate = useNavigate()
@@ -15,12 +16,6 @@ const Pay = () => {
         navigate(SUCCESS_ROUTE)
     }
 
-    // useEffect(() => {
-    //     navigate(SUCCESS_ROUTE)
-    // }, [])
-    // useEffect(() => {
-    //     navigate(SUCCESS_ROUTE)
-    // }, [])
     return (
         <Container>
             <h1 style={{marginTop: "80px"}}>Ваш заказ</h1>
