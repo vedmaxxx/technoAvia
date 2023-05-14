@@ -15,7 +15,7 @@ const Pay = () => {
     function selectBtnHandle() {
         navigate(SUCCESS_ROUTE)
     }
-
+    
     return (
         <Container>
             <h1 style={{marginTop: "80px"}}>Ваш заказ</h1>
