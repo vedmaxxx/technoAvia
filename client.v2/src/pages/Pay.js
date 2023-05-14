@@ -15,7 +15,7 @@ const Pay = () => {
     function selectBtnHandle() {
         navigate(SUCCESS_ROUTE)
     }
-    
+
     return (
         <Container>
             <h1 style={{marginTop: "80px"}}>Ваш заказ</h1>
@@ -28,7 +28,7 @@ const Pay = () => {
                     <h4 className='mt-3'>Маршрут: {trail.selectedTrail.name}</h4>
                     <div className='mt-4'><b>Вертолет:</b> {technic.selectedTechnic.name}</div>
                     <div className='mt-2'><b>Количество человек:</b> {technic.selectedTechnic.contain}</div>
-                    <div className='mt-2'><b>Стоимость:</b> {trail.selectedTrail.price}</div>
+                    {/* <div className='mt-2'><b>Стоимость:</b> {trail.selectedTrail.price}</div> */}
                 </div>
             </Card>
             <div style={{maxWidth:"35%"}} className='mt-4'>

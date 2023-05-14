@@ -4,6 +4,7 @@ import App from './App'
 import UserStore from './site/UserStore';
 import TrailStore from './site/TrailStore';
 import TechnicStore from './site/TechnicStore';
+import TourStore from './site/TourStore';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/css/bootstrap-grid.css';
 // import { AppContextProvider } from './components/AppContext.js'
@@ -17,7 +18,7 @@ ReactDOM.render(
         user: new UserStore(),
         trail: new TrailStore(),
         technic: new TechnicStore(),
-        // tour: new TourStore(),
+        tour: new TourStore(),
     }}>
         
         <App />

@@ -1,19 +1,19 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Modal from 'react-bootstrap/Modal'
-import { Button, Card, Image } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
 import { Context } from '../..';
-import { Navigate, redirect, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import TechnicItem from './TechnicItem';
+import TourItem from './TourItem';
 
-const SelectTechnic = ({show, onHide}) => {
-    const {technic : technicContext} = useContext(Context)
-    const navigate = useNavigate()
-
+const SelectTour = ({show, onHide}) => {
+    const {tour} = useContext(Context)
+    
     return (
         <Modal
             show={show}
             onHide={onHide}
-            size="lg"
+            size="xl"
             centered
         >
             <Modal.Header closeButton>
@@ -21,13 +21,16 @@ const SelectTechnic = ({show, onHide}) => {
                     id="contained-modal-title-vcenter" 
                     style={{marginLeft:30, fontSize:30}}
                 >
-                    Выберите вертолет
+                    Выберите тур
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <div className='pe-3 ps-3 d-flex flex-column'>
-                    {technicContext.technics.map(technic => 
-                        <TechnicItem technic={technic}/>
+                <div className='d-flex flex-column ms-5 me-5'>
+                    {tour.tours.map(tour => 
+                        <TourItem 
+                            key={tour.id} 
+                            tour={tour}
+                        />
                     )}
                 </div>
             </Modal.Body>
@@ -38,4 +41,4 @@ const SelectTechnic = ({show, onHide}) => {
     )
 };
 
-export default SelectTechnic;
+export default SelectTour;

@@ -1,14 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Card, Col, Image} from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
-import SelectTechnic from './modals/SelectTechnic';
+import SelectTour from './modals/SelectTour';
 import { Context } from '..';
 
 // useHistory в reactrouterdomv6 == useNavigate
 
 // здесь нужно вставить корректно данные по маршруту
 const TrailItem = ({trail}) => {
-    const [technicVisible, setTechnicVisible] = useState(false)
+    const [modalVisible, setModalVisible] = useState(false)
     const {trail : trailContext} = useContext(Context)
     // const history = useNavigate()
     
@@ -18,7 +18,7 @@ const TrailItem = ({trail}) => {
     function selectBtnHandle() {
         trailContext.setSelectedTrail(trail)
         // console.log(trailContext.selectedTrail)
-        setTechnicVisible(true)
+        setModalVisible(true)
     }
     
     return (
@@ -55,7 +55,7 @@ const TrailItem = ({trail}) => {
                     </Button>
                 </Card>
             </div>
-            <SelectTechnic show={technicVisible} onHide={() => setTechnicVisible(false)}/>
+            <SelectTour show={modalVisible} onHide={() => setModalVisible(false)}/>
         </Col>
     );
 };

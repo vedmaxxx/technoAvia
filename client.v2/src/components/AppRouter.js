@@ -7,7 +7,6 @@ import { Context } from '../index';
 // ставит в соответствие с URL-ом такое-то отображение компонента
 const AppRouter = () => {
     const {user} = useContext(Context)
-    
     return (
         // если пользователь авторизован и выбран путь из authRoutes, то отрисовываем его
         // иначе отрисовываем публичные 
