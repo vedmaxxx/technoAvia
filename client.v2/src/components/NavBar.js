@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { MAIN_ROUTE, LOGIN_ROUTE } from "../utils/consts";
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 import { observer } from "mobx-react-lite";
 
 const NavBar = observer( () => {
@@ -17,7 +17,10 @@ const NavBar = observer( () => {
         <Navbar bg="dark" variant="dark">
           <Container>
             {/* ЛЕВАЯ ЧАСТЬ НАВБАРА */}
-            <NavLink style={{color:'white', fontSize:'30px', textDecoration:'none', fontFamily:'Calibri'}} to={MAIN_ROUTE}>ТехноАвиа</NavLink>
+            <NavLink style={{color:'white', fontSize:'30px', textDecoration:'none', fontFamily:'Calibri'}} to={MAIN_ROUTE}>
+                TechnoAvia
+                {/* здесь будет картинка */}
+            </NavLink>
             <Nav className="ms-5">
               <NavLink className="me-2" style={{color: "white"}} to={MAIN_ROUTE}>
                 <Button variant={"outline-light"}>Маршруты</Button>
