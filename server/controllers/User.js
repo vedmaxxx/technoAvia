@@ -13,7 +13,7 @@ const makeJwt = (id, phonenumber, role) => {
 
 class User {
     async signup(req, res, next) {
-        const {phonenumber, password,name,surname, role = 'USER'} = req.body
+        const {phonenumber, password, name, surname, role = 'USER'} = req.body
         try {
             if (!phonenumber || !password ||!name||!surname) {
                 throw new Error('Не все поля заполнены')
