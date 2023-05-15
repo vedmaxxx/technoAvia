@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '..';
-import { Card, Container, Dropdown } from 'react-bootstrap';
+import { Card, Container, Dropdown, Image } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -8,7 +8,6 @@ import { SUCCESS_ROUTE } from '../utils/consts';
 
 const Pay = () => {
     const {tour} = useContext(Context)
-    // нужно tour
     const {trail} = useContext(Context)
     const {technic} = useContext(Context)
     const navigate = useNavigate()
@@ -32,25 +31,33 @@ const Pay = () => {
             <Card 
                 key={tour.id}
                 style={{width:"50%", height:"50%", paddingRight:30, paddingLeft:30, paddingTop:20, paddingBottom:20}} 
-                className="d-flex mt-4"
+                className="d-flex flex-row mt-4"
             >
-                <div className='d-flex flex-column'>
+                <div 
+                    className='d-flex flex-column'
+                    style={{width:'50%'}}
+                >
                     <h4 className='mt-3'>Маршрут: {trail.trails[tour.selectedTour.trailId - 1].name}</h4>
                     <div className='mt-4'><b>Вертолет:</b> {technic.technics[tour.selectedTour.technicId - 1].name}</div>
-                    <div className='mt-2'><b>Количество человек:</b> {technic.technics[tour.selectedTour.technicId - 1].contain}</div>
+                    <div className='mt-2'><b>Вместимость вертолета:</b> {technic.technics[tour.selectedTour.technicId - 1].contain}</div>
+                </div>
+                <div style={{width:'50%', paddingLeft:40}}>
+                    <Image src={trail.trails[tour.selectedTour.trailId - 1].image}
+                        style={{maxWidth:'80%', maxHeight:'100%', display:'block', objectFit:'cover'}} 
+                    />
                 </div>
             </Card>
             <div style={{maxWidth:"35%"}} className='mt-4'>
                 <Form>
                     <Form.Group className="mb-3">
                         <Form.Label>Сколько человек полетит?</Form.Label>
-                        <Form.Select style={{width:200}}>
+                        <Form.Select style={{maxWidth:200}}>
                             {createSelectItems(contain)}
                         </Form.Select>
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formDate">
-                        <Form.Label>На какую дату планируете полет?</Form.Label>
-                        <Form.Control type='' placeholder="дата..." label="Дополнительные пожелания" />
+                    <Form.Group className="mb-3">
+                        <Form.Label>дату выбери</Form.Label>
+                        <Form.Control type="date"  style={{maxWidth:200}}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formComment">
                         <Form.Label>Ваши пожелания на полет</Form.Label>

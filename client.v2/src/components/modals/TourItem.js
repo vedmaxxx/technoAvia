@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Image } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Context } from '../..';
 import TechnicItem from './TechnicItem';
@@ -8,6 +8,7 @@ import { PAY_ROUTE } from '../../utils/consts';
 
 const TourItem = ({tour}) => {
     const {technic, tour : tourContext} = useContext(Context)
+    const {trail} = useContext(Context)
     const navigate = useNavigate()
 
     function clickHandle() {
