@@ -11,9 +11,9 @@ import errorMiddleware from './middleware/errorMiddleware.js'
 const PORT = process.env.PORT || 5000
 const app = express()
 // добавил для решения ошибки CORS в консоли браузера
-cors = require('cors')
+// cors = require('cors')
 // Cross-Origin Resource Sharing
-app.use(cors({origin: ['http://localhost:3000'], credentials: true, optionsSuccessStatus:200}))
+app.use(cors({origin: ['http://localhost:3001'], credentials: true}))
 // middleware для работы с json
 app.use(express.json())
 // middleware для статики (img, css)

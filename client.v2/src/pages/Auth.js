@@ -10,15 +10,19 @@ import { login, registration } from '../http/userAPI';
 const Auth = () => {
     const location = useLocation()
     const isLogin = location.pathname === LOGIN_ROUTE
-    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    const [surname, setSurname] = useState('')
+    const [phonenumber, setPhonenumber] = useState('')
     const [password, setPassword] = useState('')
+    
 
 
     const click = async () => {
         if (isLogin) {
-            const response = await login()
+            const response = await login(phonenumber, password)
+            console.log(response)
         } else {
-            const response = await registration(email, password)
+            const response = await registration(phonenumber, password, name, surname)
             console.log(response)
         } 
     }
@@ -31,11 +35,33 @@ const Auth = () => {
             <Card style={{width:600}} className='p-5'>
                 <h2 className='m-auto'>{isLogin ? "Авторизация" : "Регистрация"} </h2>
                 <Form className="d-flex flex-column">
+                    {
+                        !isLogin ? 
+                        <Form.Control
+                        className="mt-2"
+                        placeholder="Ваше имя"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                        /> 
+                        :
+                        ''
+                    }
+                    {
+                        !isLogin ? 
+                        <Form.Control
+                        className="mt-2"
+                        placeholder="Ваша фамилия"
+                        value={surname}
+                        onChange={e => setSurname(e.target.value)}
+                        /> 
+                        :
+                        ''
+                    }
                     <Form.Control
                         className="mt-2"
                         placeholder="Введите ваш email..."
-                        value={email}
-                        onChange={e => setEmail(e.target.value)}
+                        value={phonenumber}
+                        onChange={e => setPhonenumber(e.target.value)}
                     />
                     <Form.Control
                         className="mt-2"

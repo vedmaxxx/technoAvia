@@ -24,7 +24,6 @@ class User {
             const hash = await bcrypt.hash(password, 5)
             const user = await UserModel.create({phonenumber, password: hash,name,surname, role})
             const token = makeJwt(user.id, user.phonenumber, user.role)
-            // return res.json({token})
             return res.json({token})
         } catch(e) {
             next(AppError.badRequest(e.message))

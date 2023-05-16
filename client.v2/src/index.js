@@ -12,6 +12,7 @@ import TourStore from './site/TourStore';
 // Контекст разработан для передачи данных, которые можно 
 // назвать «глобальными» для всего дерева React-компонентов
 export const Context = createContext(null)
+console.log(process.env.REACT_APP_API_URL)
 
 ReactDOM.render(
     <Context.Provider value={{
