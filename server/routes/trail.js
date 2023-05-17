@@ -16,7 +16,7 @@ router.get('/getall', TrailController.getAll)
 // получить один товар каталога
 router.get('/getone/:id([0-9]+)', TrailController.getOne)
 // создать товар каталога — нужны права администратора
-router.post('/create', authMiddleware, adminMiddleware, TrailController.create)
+router.post('/create', /*authMiddleware, adminMiddleware,*/ TrailController.create)
 // обновить товар каталога  — нужны права администратора
 router.put('/update/:id([0-9]+)', /*authMiddleware, adminMiddleware,*/ TrailController.update)
 // удалить товар каталога  — нужны права администратора

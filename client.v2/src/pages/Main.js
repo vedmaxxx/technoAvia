@@ -9,8 +9,8 @@ const Main = observer(() => {
     const {trail} = useContext(Context) 
 
     useEffect(() => {
-        fetchTrails().then(data => trail.setTrails(data))
-    },[])
+        fetchTrails().then(data => trail.setTrails(Object.values(data)))
+    },[trail])
 
     return (
         <Container>

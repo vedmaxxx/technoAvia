@@ -15,6 +15,6 @@ export const login = async (phonenumber, password) => {
 }
 
 export const check = async () => {
-    const {data} = await $authHost.post('api/user/auth')
+    const {data} = await $authHost.get('user/check')
     return jwt_decode(data.token)
 }
