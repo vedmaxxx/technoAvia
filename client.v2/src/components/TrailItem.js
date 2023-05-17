@@ -3,21 +3,18 @@ import { Card, Col, Image} from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import SelectTour from './modals/SelectTour';
 import { Context } from '..';
-
 // useHistory в reactrouterdomv6 == useNavigate
 
 // здесь нужно вставить корректно данные по маршруту
 const TrailItem = ({trail}) => {
     const [modalVisible, setModalVisible] = useState(false)
     const {trail : trailContext} = useContext(Context)
-    // const history = useNavigate()
     
     // функция, которая при нажатии кнопки "Выбрать маршрут" сохранит
     // информацию о выбранном маршруте в TrailStore и откроет модальное
     // окно выбора вертолета
     function selectBtnHandle() {
         trailContext.setSelectedTrail(trail)
-        // console.log(trailContext.selectedTrail)
         setModalVisible(true)
     }
     
@@ -31,7 +28,6 @@ const TrailItem = ({trail}) => {
                     />
                 </div>
                 <Card 
-                    // active={trail.id === trailContext.selectedTrail.id}
                     style={{width:500, paddingRight:60, paddingLeft:60, paddingTop:40, paddingBottom:20}} 
                     className="ms-5 d-flex flex-column align-items-center"
                 >

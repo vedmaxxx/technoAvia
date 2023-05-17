@@ -17,13 +17,15 @@ export const authRoutes = [
         path: LK_ROUTE,
         Component: Lk
     },
-    
+    {
+        // все равно доступен неавторизованному пользователю
+        path: PAY_ROUTE,
+        Component: Pay
+    },
 ]
 
 // пути для всех 
 export const publicRoutes = [
-    // в зависимости от компонента будет логин/регистр.
-    // что здесь компонент? page на которую мы перебросимся?
     {
         path: MAIN_ROUTE,
         Component: Main
@@ -35,11 +37,6 @@ export const publicRoutes = [
     {
         path: REGISTRATION_ROUTE,
         Component: Auth
-    },
-    // д.б. в authRoutes
-    {
-        path: PAY_ROUTE,
-        Component: Pay
     },
     {
         path: SUCCESS_ROUTE,

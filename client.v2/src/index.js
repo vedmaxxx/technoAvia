@@ -5,9 +5,6 @@ import UserStore from './site/UserStore';
 import TrailStore from './site/TrailStore';
 import TechnicStore from './site/TechnicStore';
 import TourStore from './site/TourStore';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import 'bootstrap/dist/css/bootstrap-grid.css';
-// import { AppContextProvider } from './components/AppContext.js'
 
 // Контекст разработан для передачи данных, которые можно 
 // назвать «глобальными» для всего дерева React-компонентов

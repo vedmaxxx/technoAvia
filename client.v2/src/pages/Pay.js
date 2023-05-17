@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '..';
-import { Card, Container, Dropdown, Image } from 'react-bootstrap';
+import { Card, Container, Image } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 import { Form } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
@@ -56,7 +56,7 @@ const Pay = () => {
                         </Form.Select>
                     </Form.Group>
                     <Form.Group className="mb-3">
-                        <Form.Label>дату выбери</Form.Label>
+                        <Form.Label>Выберите дату</Form.Label>
                         <Form.Control type="date"  style={{maxWidth:200}}/>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formComment">

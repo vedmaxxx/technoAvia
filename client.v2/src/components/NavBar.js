@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { NavLink, useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import { MAIN_ROUTE, LOGIN_ROUTE } from "../utils/consts";
-import { Container, Image } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { observer } from "mobx-react-lite";
 
 const NavBar = observer( () => {
@@ -18,8 +18,6 @@ const NavBar = observer( () => {
     }
 
     return (
-      
-      //  fixed="top"
         <Navbar bg="dark" variant="dark">
           <Container>
             {/* ЛЕВАЯ ЧАСТЬ НАВБАРА */}
@@ -31,16 +29,12 @@ const NavBar = observer( () => {
               <NavLink className="me-2" style={{color: "white"}} to={MAIN_ROUTE}>
                 <Button variant={"outline-light"}>Маршруты</Button>
               </NavLink>
-              {/* <NavLink className="me-2" style={{color: "white"}} to={MAIN_ROUTE}>
-                <Button variant={"outline-light"}>Вертолеты</Button>
-              </NavLink> */}
             </Nav>
-
 
             {/* ПРАВАЯ ЧАСТЬ НАВБАРА */}
             {user.isAuth ?
               <Nav className="ms-auto" style={{color: "white"}}>
-                <Button style={{marginRight:5}} variant={"outline-light"}>Админ-панель</Button>
+                {/* <Button style={{marginRight:5}} variant={"outline-light"}>Админ-панель</Button> */}
                 <Button variant={"outline-light"} onClick={() => logOut()} className="ml-2">Выйти</Button>
               </Nav>
               :
