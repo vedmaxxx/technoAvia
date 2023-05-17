@@ -11,6 +11,12 @@ import { observer } from "mobx-react-lite";
 const NavBar = observer( () => {
     const {user} = useContext(Context)
     const navigate = useNavigate()
+
+    const logOut = () => {
+      user.setUser({})
+      user.setIsAuth(false)
+    }
+
     return (
       
       //  fixed="top"
@@ -35,7 +41,7 @@ const NavBar = observer( () => {
             {user.isAuth ?
               <Nav className="ms-auto" style={{color: "white"}}>
                 <Button style={{marginRight:5}} variant={"outline-light"}>Админ-панель</Button>
-                <Button variant={"outline-light"} onClick={() => user.setIsAuth(false)} className="ml-2">Выйти</Button>
+                <Button variant={"outline-light"} onClick={() => logOut()} className="ml-2">Выйти</Button>
               </Nav>
               :
               <Nav className="ms-auto" style={{color: "white"}}>
